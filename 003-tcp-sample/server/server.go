@@ -31,7 +31,9 @@ func main() {
 }
 
 func handle(conn net.Conn) {
+	//Scan(read) what is written in conn
 	scanner := bufio.NewScanner(conn)
+	//Scan for every token
 	for scanner.Scan() {
 		ln := scanner.Text()
 		fmt.Printf("%s\r\n", ln)
